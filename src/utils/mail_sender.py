@@ -43,7 +43,7 @@ def attach_image(cid: str, image_name):
         file = join(Path().absolute(), f'src\\static\\images\\{image_name}')
         with open(file, 'rb') as fp:
             img = MIMEImage(fp.read())
-            img.add_header('Content-ID', cid.format(file))
+            img.add_header('Content-ID', f'<{cid}>'.format(file))
             return img
     except Exception as e:
         raise e
