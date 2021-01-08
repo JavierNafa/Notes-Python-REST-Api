@@ -1,9 +1,9 @@
-import os
 from pymongo import MongoClient
+from settings import mongo_db_name, mongo_host, mongo_port
 
-host = os.getenv('MONGO_HOST')
-port = os.getenv('MONGO_PORT') or '27017'
-db_name = os.getenv('MONGO_DB_NAME') or 'notes'
+host = mongo_host or '127.0.0.1'
+port = mongo_port or 27017
+db_name = mongo_db_name or 'notes'
 db = None
 client = None
 

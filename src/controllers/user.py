@@ -1,5 +1,7 @@
+from __future__ import absolute_import
 from operator import itemgetter
 from src.models.user import User
+from src.tasks.mail import send
 from src.utils import hash_generator, template_reader, mail_sender
 
 
@@ -15,11 +17,8 @@ def post_user(**props):
         hash = hash_generator.hash_password(password)
         user.hash = hash
         user.insert()
-        template = template_reader.read_template(
-            template_name='register', name=name)
-        image = mail_sender.attach_image('python', 'python.png')
-        body = mail_sender.create_mail(email, 'Register test', template, image)
-        mail_sender.send_mail(email, body)
+        send.apply_async(queue='high_priority', args=(
+            'register', 'python', 'python.png', 'Register test', email), kwargs={'name': name.upper()})
         return {'success': True, 'data': {'name': name, 'last_name': last_name, 'email': email}}
     except Exception as e:
         raise e

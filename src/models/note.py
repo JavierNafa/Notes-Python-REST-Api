@@ -1,5 +1,5 @@
-from src.repositories.mongo_functions import MongoFunctions
 from datetime import datetime
+from src.repositories.mongo_functions import MongoFunctions
 
 
 class Note(MongoFunctions):
