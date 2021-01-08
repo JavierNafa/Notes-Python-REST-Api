@@ -1,8 +1,6 @@
-from os import getenv
 from jwt import encode, decode
+from settings import secret_key
 from datetime import datetime, timedelta
-
-secret_key = getenv('TOKEN_KEY')
 
 
 def generate_token(user_id):

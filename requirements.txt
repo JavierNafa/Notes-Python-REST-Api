@@ -4,6 +4,7 @@ attrs==19.3.0
 autopep8==1.5.4
 billiard==3.6.3.0
 black==19.10b0
+celery==5.0.5
 certifi==2020.12.5
 cffi @ file:///C:/ci/cffi_1606255208697/work
 Click==7.0

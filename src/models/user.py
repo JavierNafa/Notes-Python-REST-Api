@@ -1,5 +1,4 @@
 from src.repositories.mongo_functions import MongoFunctions
-from datetime import datetime
 
 
 class User(MongoFunctions):

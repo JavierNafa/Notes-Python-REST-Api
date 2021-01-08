@@ -1,7 +1,7 @@
-from os import getenv
+from settings import redis_expiration
 from src.database.redis import redis_conn
 
-expiration = getenv('REDIS_EXPIRATION') or 60
+expiration = redis_expiration or 60
 
 
 def set_key(key, data: str, ex=expiration):

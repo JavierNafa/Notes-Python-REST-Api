@@ -1,6 +1,6 @@
-from flask import Blueprint, request, jsonify, make_response, g
 from src.controllers.user import post_user
 from src.utils.response_error import ResponseError
+from flask import Blueprint, request, jsonify, make_response, g
 
 user_blueprint = Blueprint(
     'user', __name__, template_folder='routes', static_folder='routes')

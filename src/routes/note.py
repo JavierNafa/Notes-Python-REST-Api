@@ -1,7 +1,7 @@
 from src.utils import response_error
 from src.middlewares.cache import cache
-from src.controllers.note import post_note, get_note, put_note, delete_note
 from flask import Blueprint, request, jsonify, make_response, g
+from src.controllers.note import post_note, get_note, put_note, delete_note
 
 
 note_blueprint = Blueprint(

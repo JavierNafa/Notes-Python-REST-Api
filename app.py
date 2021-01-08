@@ -1,12 +1,12 @@
-from os import getenv
 from flask import Flask
 from flask_cors import CORS
+from settings import flask_env
 from src.routes import user, login, note
 from src.middlewares import schema_validator, error_handler, auth
 
 app = Flask(__name__)
 CORS(app=app)
-app.config['ENV'] = getenv('ENV')
+app.config['ENV'] = flask_env
 
 
 app.before_request_funcs = {
