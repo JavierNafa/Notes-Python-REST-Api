@@ -1,9 +1,9 @@
 from __future__ import absolute_import
 from app import app
 from ast import literal_eval
-from settings import flask_debug, flask_port
 from src.database.mongo import connect
 from celery_config import configure_celery
+from settings import flask_debug, flask_port
 
 celery = configure_celery(app)
 app.celery = celery
