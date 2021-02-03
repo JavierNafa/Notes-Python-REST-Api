@@ -4,7 +4,7 @@
 
 # NOTES API
 
-A simple REST Api in Node js :)
+A simple REST Api in Python :)
 
 Sorry for my bad English :(
 
