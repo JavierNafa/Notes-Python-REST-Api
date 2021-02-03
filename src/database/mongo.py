@@ -21,3 +21,7 @@ def connect():
 
 def get_db():
     return db
+
+
+def get_client():
+    return client
