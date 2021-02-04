@@ -11,5 +11,5 @@ app.celery = celery
 if __name__ == '__main__':
     with app.app_context():
         connect()
-    app.run(port=flask_port, debug=literal_eval(flask_debug),
+    app.run(host='0.0.0.0', port=flask_port, debug=literal_eval(flask_debug),
             use_reloader=False, threaded=True)

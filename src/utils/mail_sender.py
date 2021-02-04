@@ -34,7 +34,7 @@ def send_mail(to_email, body):
 
 def attach_image(cid: str, image_name):
     try:
-        file = join(Path().absolute(), f'src\\static\\images\\{image_name}')
+        file = join(Path().absolute(), f'src/static/images/{image_name}')
         with open(file, 'rb') as fp:
             img = MIMEImage(fp.read())
             img.add_header('Content-ID', f'<{cid}>'.format(file))
