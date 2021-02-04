@@ -11,4 +11,3 @@ RUN pip install -r requirements.txt
 COPY . .
 
 CMD ["python", "main.py"]
-CMD ["celery","-A","main.celery","worker","-l","info","-c","1","-Q","default,high_priority"]
